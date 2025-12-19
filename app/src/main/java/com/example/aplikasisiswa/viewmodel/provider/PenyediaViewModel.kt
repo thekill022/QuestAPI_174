@@ -5,6 +5,7 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.aplikasisiswa.repositori.AplikasiDataSiswa
+import com.example.aplikasisiswa.viewmodel.EntryViewModel
 import com.example.aplikasisiswa.viewmodel.HomeViewModel
 
 fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa = (
@@ -15,6 +16,10 @@ object PenyediaViewModel {
         initializer {
             val aplikasi = aplikasiDataSiswa()
             HomeViewModel(aplikasi.container.repositoryDataSiswa)
+        }
+        initializer {
+            val aplikasi = aplikasiDataSiswa()
+            EntryViewModel(aplikasi.container.repositoryDataSiswa)
         }
     }
 }
