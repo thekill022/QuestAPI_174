@@ -14,6 +14,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.materialIcon
 import androidx.compose.material3.Button
@@ -152,7 +153,10 @@ fun ItemSiswa(
                 Icon(imageVector = Icons.Default.Phone, contentDescription = null)
                 Text(text = siswa.telpon, style = MaterialTheme.typography.titleMedium)
             }
-            Text(text = siswa.alamat, style = MaterialTheme.typography.titleMedium)
+            Row {
+                Icon(imageVector = Icons.Default.Home, contentDescription = "alamat")
+                Text(text = siswa.alamat, style = MaterialTheme.typography.titleMedium)
+            }
         }
     }
 }
